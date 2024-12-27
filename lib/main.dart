@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widget/button.dart';
+import 'widget/currency_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,160 +12,125 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             backgroundColor: Colors.black,
-            body: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 80,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            'hi, user',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'nice to meet you',
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.6),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 120),
-                  Text(
-                    'Total Balance',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.8),
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+            body: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 80,
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    '100000 KRW',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 48,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Button(
-                          text: 'transfer',
-                          bgColor: const Color(0xFFF1B33B),
-                          textColor: Colors.black),
-                      Button(
-                          text: 'requset',
-                          bgColor: const Color(0xFF1F2123),
-                          textColor: Colors.white),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Wallets',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text('View all',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
-                            fontSize: 12,
-                          ))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1F2123),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    padding: const EdgeInsets.all(20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              'Bitcoin',
+                              'hi, user',
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              'nice to meet you',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 12,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            SizedBox(
-                              height: 15,
-                              width: 5,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  '0.00000000',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  'BTC',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            )
                           ],
-                        ),
-                        Transform.scale(
-                          scale: 2,
-                          child: Transform.translate(
-                            offset: const Offset(-5, 12),
-                            child: const Icon(
-                              Icons.currency_bitcoin,
-                              color: Colors.white,
-                              size: 84,
-                            ),
-                          ),
                         )
                       ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: 70),
+                    Text(
+                      'Total Balance',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.8),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '100000 KRW',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 48,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Button(
+                            text: 'transfer',
+                            bgColor: const Color(0xFFF1B33B),
+                            textColor: Colors.black),
+                        Button(
+                            text: 'requset',
+                            bgColor: const Color(0xFF1F2123),
+                            textColor: Colors.white),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Wallets',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text('View all',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 12,
+                            ))
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CurrencyCard(
+                      name: 'Bitcoin',
+                      code: 'BTC',
+                      amount: '1.2345',
+                      icon: Icons.currency_bitcoin,
+                      isInverted: false,
+                      order: 1,
+                    ),
+                    CurrencyCard(
+                      name: 'Dollar',
+                      code: 'USD',
+                      amount: '52.123',
+                      icon: Icons.attach_money,
+                      isInverted: true,
+                      order: 2,
+                    ),
+                    CurrencyCard(
+                      name: 'euro',
+                      code: 'EUR',
+                      amount: '52.123',
+                      icon: Icons.euro,
+                      isInverted: false,
+                      order: 3,
+                    ),
+                  ],
+                ),
               ),
             )));
   }
